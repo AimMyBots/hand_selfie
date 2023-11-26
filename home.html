@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Hand Gesture Selfie</title>
+  </head>
+  <body>
+    <section id="demos" class="invisible">
+      <div id="liveView" class="videoView">
+        <button id="webcamButton" class="mdc-button mdc-button--raised">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">Turn On camera</span>
+        </button>
+        <h1 class="status"></h1>
+        <label for="share" class="share_label">
+          <input id="share" type="checkbox" >
+        </label>
+        <div style="position: relative">
+          <video id="webcam" autoplay playsinline></video>
+          <canvas
+            class="output_canvas"
+            id="output_canvas"
+            width="1920"
+            height="1080"
+            style="position: absolute; left: 0px; top: 0px"
+          ></canvas>
+          <p id="gesture_output" class="output"></p>
+        </div>
+      </div>
+    </section>
+
+    <canvas
+      id="capture-canvas"
+      style="transform: scale(0)"
+      width="720"
+      height="540"
+    ></canvas>
+    <div class="imgs"></div>
+
+    <div class="light removed"></div>
+
+    <audio src="./audio/096a8cb8ab9b947.mp3" id="screammer" hidden></audio>
+    <audio src="./audio/camera-shutter-click-01.mp3" id="capture-audio" hidden></audio>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
